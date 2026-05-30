@@ -33,3 +33,7 @@ body {
 .flash{
     background-color: #fff;
 }
+
+.user-flash{
+    background-color:rgb(2, 176, 2);
+}
