@@ -56,7 +56,11 @@ function checkAns(idx){
         }
 
     } else {
-        h2.innerText="GameOver! Press any key to start again.";
+        h2.innerHTML=`GameOver! Your score was <b>${level}</b> <br>Press any key to start again.`;
+        document.querySelector("body").style.backgroundColor="red";
+        setTimeout(function(){
+            document.querySelector("body").style.backgroundColor="white";
+        }, 200);
         reset();
     }
 }
