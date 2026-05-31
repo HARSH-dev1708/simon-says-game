@@ -33,10 +33,10 @@ function userFlash(btn){
 
 function gameWin(){
     h2.innerHTML = "Congratulations! You surpassed all the levels.&#x1F389; <br> Press any key to Play again"
-    document.querySelector("body").style.backgroundColor="green";
+    document.querySelector("body").style.background="green";
 
     setTimeout(function(){
-        document.querySelector("body").style.backgroundColor="white";
+        document.querySelector("body").style.background="radial-gradient(#ffcb94, #74d5ff)";
     }, 100);
     reset();
 }
@@ -70,9 +70,9 @@ function checkAns(idx){
 
     } else {
         h2.innerHTML=`GameOver! Your score was <b>${level}</b> <br>Press any key to start again.`;
-        document.querySelector("body").style.backgroundColor="red";
+        document.querySelector("body").style.background="red";
         setTimeout(function(){
-            document.querySelector("body").style.backgroundColor="white";
+            document.querySelector("body").style.background="radial-gradient(#ffcb94, #74d5ff)";
         }, 200);
         reset();
     }
