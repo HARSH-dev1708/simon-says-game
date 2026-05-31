@@ -57,11 +57,12 @@ function checkAns(idx){
 
     } else {
         h2.innerText="GameOver! Press any key to start again.";
+        reset();
     }
 }
 
 function btnPress(){
-    console.log(this.classList);
+    // console.log(this.classList);
     let btn = this;
     userFlash(btn);
 
@@ -76,4 +77,11 @@ let allBtns =  document.querySelectorAll(".btn");
 
 for(btn of allBtns){
     btn.addEventListener("click", btnPress);
+}
+
+function reset(){
+    started = false;
+    gameSeq = [];
+    userSeq = [];
+    level = 0;
 }
