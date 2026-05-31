@@ -3,7 +3,7 @@ let userSeq = [];
 
 let level = 0;
 let started = false;
-
+let endLevel = 10;
 let btns = ["yellow", "red", "green", "blue"];
 
 let h2 = document.querySelector("h2");
@@ -31,11 +31,24 @@ function userFlash(btn){
     }, 300);
 }
 
+function gameWin(){
+    h2.innerHTML = "Congratulations! You surpassed all the levels.&#x1F389; <br> Press any key to Play again"
+    document.querySelector("body").style.backgroundColor="green";
+
+    setTimeout(function(){
+        document.querySelector("body").style.backgroundColor="white";
+    }, 100);
+    reset();
+}
 
 
 function levelUp(){
     userSeq = []
     level++;
+    if(level > endLevel){
+        gameWin();
+        return;
+    }
     h2.innerText = `Level ${level}`;
 
     let randIdx = Math.floor(Math.random()*4);
